@@ -3,3 +3,7 @@ glance image-create --name "image_name" --disk-format raw --container-format bar
 
 # Upload vmdk image
 glance image-create --name "vmware" --container-format bare --disk-format vmdk --property vmware_disktype="sparse" --property vmware_adaptertype="ide" --progress < /root/vmware.vmdk
+
+
+# Download image
+glance image-download image_uuid -file $local_path/image_name --progress
