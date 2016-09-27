@@ -1,0 +1,7 @@
+# Connect
+virsh 
+
+#Virsh migration
+virsh migrate --live --persistent domain_name qemu+ssh://computer2/system
+--live  live miagration
+--persistent 持久化到目标主机
