@@ -1,0 +1,11 @@
+
+rados lspools 
+rados mkpool test
+rados rmpool test test --yes-i-really-really-mean-it
+rados cppool pool-name dest-poolname
+rados df
+rados -p pool-name ls
+
+# list snapshot
+rados -p ecpool lssnap
+
