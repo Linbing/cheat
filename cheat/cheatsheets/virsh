@@ -1,7 +1,51 @@
 # Connect
-virsh 
+# ssh
+virsh -c qemu+ssh://computer2/system list --all
+# tcp
+virsh  -c qemu+tcp://computer2/system list --all
+# tls
+virsh  -c qemu+tls://computer2/system list --all
 
-#Virsh migration
+# Set vm auto start
+virsh autostart domain
+
+# Start/stop/reboot/delete/define vm
+virsh start domain_name
+virsh shutdown domain_name
+virsh reboot domain_name
+virsh destroy domain_name
+virsh define domain_name
+virsh undefine domain_name
+
+
+# Virsh migration
 virsh migrate --live --persistent domain_name qemu+ssh://computer2/system
 --live  live miagration
 --persistent 持久化到目标主机
+
+
+#List VM's all block dev
+virsh domblklist domain_name
+
+# List VM's all interface
+virsh domiflist domain_name
+
+# Attach a new interface
+virsh attach-interface domain_name --type bridge --source br1 --model virtio [--config | --current]
+virsh detach-interface domain --type bridge --mac 52:54:10:f5:c5:6c [--config | --current]
+--config: needed reboot to effective
+--current: effective immediately
+
+# Close/Open interface
+virsh domif-setlink domain_name vnet0 down
+virsh domif-setlink domain_name vnet0 up
+
+# Get interface status
+virsh domif-getlink domain_name vnet1
+
+
+
+
+
+
+
