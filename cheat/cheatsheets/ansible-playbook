@@ -1,0 +1,4 @@
+# play a task
+
+ansible-playbook -i inventory/hosts ./xxxx.yml --tags="xxx,xxx" -vvvv
+
