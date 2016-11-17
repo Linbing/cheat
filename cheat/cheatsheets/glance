@@ -1,6 +1,8 @@
 # Upload image
 glance image-create --name "image_name" --disk-format raw --container-format bare --progress < $path/image.raw
 
+glance image-create --name image_name --visibility public --disk-format aki --container-format aki < my-deploy-ramdisk.kernel
+
 # Upload vmdk image
 glance image-create --name "vmware" --container-format bare --disk-format vmdk --property vmware_disktype="sparse" --property vmware_adaptertype="ide" --progress < /root/vmware.vmdk
 

@@ -1,0 +1,8 @@
+#Qemu-image-convert
+qemu-img convert -f s_format -O o_format s_image.format o_image.format
+
+
+#Qemu start kvm
+/usr/libexec/qemu-kvm -m 256 -drive \
+file=/root/centos7_sahara_vanilla_hadoop_2_6_latest.qcow2,if=virtio,boot=on \
+     -boot c -nographic -usb -usbdevice tablet -nographic -vnc :10

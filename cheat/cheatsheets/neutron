@@ -1,0 +1,9 @@
+#Create network
+neutron net-create --tenant-id $tenant-id net_name --shared --provider:network_type flat \
+                    --provider:physical_network externl
+
+
+#Create Subnet
+neutron subnet-create net_name --name subnet_name --allocation-pool \
+                    start=ip_start,end=ip_end --gateway gateway_ip ipmask/mask(192.168.1.0/24)
+
